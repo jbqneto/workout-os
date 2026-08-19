@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workout-os.local/schemas/trainer-response-1.0.0.json",
+  "title": "Workout OS Trainer Response 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion","documentType","documentId","createdAt","payload"],
+  "properties": {"schemaVersion":{"const":"1.0.0"},"documentType":{"const":"trainer-response"},"documentId":{"type":"string","minLength":1},"createdAt":{"type":"string","format":"date-time"},"payload":{"type":"object","description":"Operational source of truth is src/integrations/trainer/schemas/trainerResponse.ts. Run npm run schema:export after dependencies are installed."}}
+}

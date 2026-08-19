@@ -1,0 +1,1 @@
+import { PlaceholderScreen } from '@/features/misc/PlaceholderScreen'; export default function Screen(){return <PlaceholderScreen title="Library" description="Exercises, Equipment and Environments. TASK-006/TASK-007."/>;}

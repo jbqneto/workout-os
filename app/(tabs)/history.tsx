@@ -1,0 +1,1 @@
+import { PlaceholderScreen } from '@/features/misc/PlaceholderScreen'; export default function Screen(){return <PlaceholderScreen title="History" description="Chronological sessions and exact set history. TASK-009."/>;}

@@ -1,0 +1,1 @@
+import { PlaceholderScreen } from '@/features/misc/PlaceholderScreen'; export default function Screen(){return <PlaceholderScreen title="Settings" description="Local settings, diagnostics and Trainer Sync access."/>;}

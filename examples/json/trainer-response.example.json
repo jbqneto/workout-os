@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "documentType": "trainer-response",
+  "documentId": "resp_2026_09_plan",
+  "createdAt": "2026-08-31T21:00:00Z",
+  "payload": {
+    "basedOnRequestId": "req_2026_08_monthly_review",
+    "trainingPlan": {
+      "id": "plan_2026_09",
+      "name": "September 2026",
+      "validFrom": "2026-09-01",
+      "validUntil": "2026-09-30",
+      "notes": ["Hypertrophy cycle."],
+      "workouts": [{"id":"workout_pull","name":"Back + Biceps","prescriptions":[{"id":"presc_pull_hammer_curl","exerciseId":"ex_hammer_curl","sets":3,"reps":{"min":10,"max":15},"targetRir":{"min":1,"max":2},"restSeconds":90,"notes":[],"substitutions":[]}],"variants":[{"id":"variant_pull_gym_45","environmentId":"env_fitness_hut","targetDurationMinutes":45,"prescriptionIds":["presc_pull_hammer_curl"]}]}]
+    },
+    "review": {"summary":"Good adherence during August.","observations":["Review objective history before changing load."],"recommendations":["Keep the next cycle discussion external to the app."]}
+  }
+}

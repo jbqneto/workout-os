@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workout-os.local/schemas/trainer-request-1.0.0.json",
+  "title": "Workout OS Trainer Request 1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion","documentType","documentId","createdAt","source","payload"],
+  "properties": {"schemaVersion":{"const":"1.0.0"},"documentType":{"const":"trainer-request"},"documentId":{"type":"string","minLength":1},"createdAt":{"type":"string","format":"date-time"},"source":{"type":"object","additionalProperties":false,"required":["app","appVersion"],"properties":{"app":{"const":"workout-os"},"appVersion":{"type":"string"}}},"payload":{"type":"object","description":"Operational source of truth is src/integrations/trainer/schemas/trainerRequest.ts. Run npm run schema:export after dependencies are installed."}}
+}

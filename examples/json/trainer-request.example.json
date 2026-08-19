@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "documentType": "trainer-request",
+  "documentId": "req_2026_08_monthly_review",
+  "createdAt": "2026-08-31T20:00:00Z",
+  "source": {
+    "app": "workout-os",
+    "appVersion": "0.1.0"
+  },
+  "payload": {
+    "purpose": "monthly_review_and_plan",
+    "responseContract": {
+      "documentType": "trainer-response",
+      "schemaVersion": "1.0.0",
+      "output": "pure_json",
+      "preferExistingExerciseIds": true,
+      "neverInventEquipment": true
+    },
+    "trainingProfile": {
+      "goals": ["hypertrophy"],
+      "experienceLevel": "intermediate",
+      "preferredUnits": "metric",
+      "constraints": [],
+      "notes": "Prefer 45–60 minute sessions."
+    },
+    "environments": [{"id":"env_fitness_hut","name":"Fitness Hut","equipmentIds":["eq_cable_machine","eq_dumbbells"]}],
+    "equipmentCatalog": [{"id":"eq_cable_machine","name":"Cable Machine","category":"cable"},{"id":"eq_dumbbells","name":"Dumbbells","category":"dumbbell"}],
+    "exerciseCatalog": [{"id":"ex_hammer_curl","name":"Hammer Curl","aliases":["Rosca Martelo"],"movementPattern":"elbow_flexion","primaryMuscles":["brachialis","brachioradialis"],"secondaryMuscles":["biceps_brachii"],"requiredEquipmentIds":["eq_dumbbells"],"optionalEquipmentIds":[],"executionNotes":["Keep a neutral grip."],"media":[],"substitutionExerciseIds":[],"isUnilateral":false}],
+    "history": {"from":"2026-08-01","to":"2026-08-31","sessions":[]}
+  }
+}

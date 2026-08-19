@@ -1,0 +1,1 @@
+import { PlaceholderScreen } from '@/features/misc/PlaceholderScreen'; export default function Screen(){return <PlaceholderScreen title="Workouts" description="Active cycle and explicit environment/time variants. TASK-008."/>;}

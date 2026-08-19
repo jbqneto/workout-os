@@ -1,0 +1,3 @@
+import { describe, expect, it } from 'vitest';
+import { createRestTimer, extendRestTimer, remainingRestSeconds } from './restTimer';
+describe('rest timer',()=>{it('derives remaining seconds from the absolute deadline',()=>{const start=Date.parse('2026-08-18T20:00:00.000Z');const timer=createRestTimer('es_1','Lat Pulldown',120,start);expect(remainingRestSeconds(timer,start+30_000)).toBe(90);});it('extends the deadline',()=>{const start=Date.parse('2026-08-18T20:00:00.000Z');const timer=extendRestTimer(createRestTimer('es_1','Lat Pulldown',120,start),30);expect(remainingRestSeconds(timer,start)).toBe(150);});});

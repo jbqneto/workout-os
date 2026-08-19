@@ -1,0 +1,1 @@
+import { PlaceholderScreen } from '@/features/misc/PlaceholderScreen'; export default function Screen(){return <PlaceholderScreen title="Trainer Sync" description="Manual JSON export/import and validation preview. TASK-012 to TASK-015."/>;}

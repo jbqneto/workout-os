@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Workout OS",
+    "slug": "workout-os",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "workoutos",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "package": "dev.neto.workoutos",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": true
+    },
+    "ios": {
+      "bundleIdentifier": "dev.neto.workoutos"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "defaultChannel": "rest-timer"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

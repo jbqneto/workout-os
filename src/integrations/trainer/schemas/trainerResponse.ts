@@ -1,0 +1,4 @@
+import { z } from 'zod';
+import { EquipmentSchema, ExerciseSchema, SCHEMA_VERSION, TrainingPlanSchema } from './common';
+export const TrainerResponseSchema=z.object({schemaVersion:z.literal(SCHEMA_VERSION),documentType:z.literal('trainer-response'),documentId:z.string().min(1),createdAt:z.iso.datetime({offset:true}),payload:z.object({basedOnRequestId:z.string().min(1),catalogPatch:z.object({equipment:z.array(EquipmentSchema).default([]),exercises:z.array(ExerciseSchema).default([])}).strict().optional(),trainingPlan:TrainingPlanSchema.optional(),review:z.object({summary:z.string(),observations:z.array(z.string()).default([]),recommendations:z.array(z.string()).default([])}).strict().optional()}).strict().refine(payload=>payload.catalogPatch!==undefined||payload.trainingPlan!==undefined||payload.review!==undefined,'response must contain at least one result')}).strict();
+export type TrainerResponse=z.infer<typeof TrainerResponseSchema>;

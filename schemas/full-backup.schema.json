@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workout-os.local/schemas/full-backup-1.0.0.json",
+  "title": "Workout OS Full Backup 1.0.0",
+  "type": "object",
+  "description": "Provisional until TASK-016; regenerate from Zod."
+}
