@@ -32,7 +32,9 @@ Do not add an automatic progression engine to this repository.
 
 ## Current status
 
-This repository is the architectural bootstrap. The six refined Google Stitch screens are stored under `docs/design/reference/` and are the visual source of truth for the first implementation pass.
+This repository is the architectural bootstrap. The visual direction comes from the six refined Google Stitch screens used during product design.
+
+The GitHub connector bootstrap contains the application code and design rules, but not the binary Stitch PNG assets. Before pixel-fidelity work on TASK-001, copy the reference assets from the original `workout-os-react-native-bootstrap.zip` into `docs/design/reference/` or provide them directly to the coding agent. See `docs/design/reference/README.md`.
 
 The first Codex task is **TASK-001 — Core UI fidelity/refinement**, documented in `TASKS.md`.
 
@@ -83,11 +85,11 @@ src/
   domain/                    domain types independent of UI/infrastructure
   features/                  feature screens and use cases
   integrations/trainer/      JSON protocol, import/export and validation
-  data/demo/                  temporary fixtures for UI implementation
+  data/demo/                 temporary fixtures for UI implementation
 schemas/                     generated/public JSON Schema contracts
 examples/json/               canonical request/response examples
 docs/
-  design/reference/          Stitch screenshots + HTML reference
+  design/reference/          Stitch reference instructions/assets when copied locally
   adr/                       architecture decision records
 AGENTS.md                     non-negotiable instructions for coding agents
 TASKS.md                      ordered implementation backlog
@@ -132,9 +134,9 @@ The UI direction is dark-first, technical, restrained and high-density. The acti
 See:
 
 - `docs/design/DESIGN.md`
-- `docs/design/reference/`
+- `docs/design/reference/README.md`
 
-Do not treat text/content invented by Stitch as domain truth. Stitch is the visual source of truth only.
+Do not treat text/content invented by Stitch as domain truth. Stitch is the visual source of truth only; the explicit corrections in `TASKS.md` and `AGENTS.md` take precedence over mock data or accidental UI details.
 
 ## Commands
 
