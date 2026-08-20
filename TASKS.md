@@ -2,7 +2,36 @@
 
 Tasks are ordered. Do not skip architectural prerequisites merely because a later screen is visually interesting.
 
-## P0 — Foundation and core workout UX
+## P0 — Engineering baseline
+
+### TASK-000A — Repository hardening
+
+**Status:** implemented 2026-08-20; local dependency validation still required.
+
+Implemented:
+
+- GitHub Actions quality workflow;
+- blocking application bootstrap until SQLite migrations complete;
+- retry UI for database startup failure;
+- SQLite migration 002 with high-value indexes, value guards and reference guards;
+- foreign-key integrity check after migrations;
+- refined semantic trainer-response validation;
+- trainer cannot create equipment/environments through catalog patches;
+- duplicate/colliding exercise/plan references rejected;
+- JSON Schema export script hardened; public schema artifacts must be regenerated locally after dependencies are installed;
+- refined Stitch screenshot filenames/documentation normalized; binary PNG copy remains a local-only step because the GitHub connector cannot write local binary files directly;
+- additional semantic-validation tests.
+
+Pending local step:
+
+- copy the six refined Stitch PNGs into `docs/design/reference/`;
+- generate and commit `package-lock.json` after the first successful `npm install`;
+- run `npm run schema:export` locally and commit the generator output if it differs from the bootstrap schema artifacts;
+- once the lockfile/schema output is verified, tighten CI to use only `npm ci` and enforce schema drift with `git diff --exit-code schemas/`.
+
+---
+
+## P0 — Core workout UX
 
 ### TASK-001 — Port and refine the six Stitch core screens
 
@@ -57,15 +86,16 @@ Screens:
 
 ### TASK-002 — Establish SQLite database and migrations
 
-Implement `src/core/db` migration runner and initial schema.
+**Status:** bootstrap + migrations implemented; integration test still pending.
 
 Acceptance:
 
-- database opens at app startup;
+- database opens before application routes render;
 - foreign keys enabled;
 - WAL enabled;
 - migration tracked in `schema_migrations`;
-- migration test verifies creation of core tables.
+- post-migration foreign-key check succeeds;
+- migration test verifies creation of core tables and migration 002 guards.
 
 ### TASK-003 — Seed deterministic demo data
 
@@ -151,7 +181,7 @@ Focus:
 - resistance union;
 - training plan/variants;
 - history sessions;
-- catalog patch.
+- exercise-only catalog patch.
 
 ### TASK-012 — Trainer request exporter
 
@@ -171,9 +201,9 @@ No database writes before explicit confirmation.
 
 ### TASK-014 — Transactional import commit
 
-Catalog patch and plan import in one SQLite transaction.
+Exercise catalog patch and plan import in one SQLite transaction.
 
-Unknown references are errors unless explicitly supplied in a valid catalog patch.
+Unknown references are errors unless explicitly supplied as valid new exercises. Equipment and environments cannot be created by trainer responses.
 
 ### TASK-015 — Trainer Sync UI
 
