@@ -1,4 +1,5 @@
-import { PropsWithChildren, useCallback, useEffect, useState } from 'react';
+import type { PropsWithChildren } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
 import { getDatabase } from '@/core/db/database';
 import { colors, radius, spacing, touchTarget } from '@/core/theme/tokens';
