@@ -54,6 +54,8 @@ Pipeline:
 
 Never silently create unknown equipment or silently map exercises by fuzzy name.
 
+Trainer catalog patches may add **new exercises only**. Equipment and environments represent physical reality and are owned by the local app/user; a trainer response must never create them. An exercise patch referencing unknown equipment is invalid, and an exercise ID collision must not be interpreted as an implicit update.
+
 ### 5. Local first
 
 No backend, auth, cloud database, analytics SDK, account system or network dependency unless a later product decision explicitly changes scope.
