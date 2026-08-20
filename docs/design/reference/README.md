@@ -1,7 +1,18 @@
-# Stitch reference screens
+# Google Stitch reference screens
 
-The original bootstrap archive contains the six refined Google Stitch PNG/HTML exports used to define the visual direction.
+These screenshots are the visual source of truth for TASK-001. They are design references, not domain-data sources.
 
-This GitHub connector bootstrap commits the text/code project structure but does not write the binary PNG reference assets. Before TASK-001 visual-fidelity work, copy the reference assets from the original `workout-os-react-native-bootstrap.zip` into this directory (or provide them directly to the coding agent).
+Expected refined screenshots:
 
-The references are **visual/interaction references**, not authoritative exercise or training data. Apply the corrections listed in `TASKS.md` and `AGENTS.md` rather than reproducing Stitch output mechanically.
+- `home.png`
+- `workout-preview.png`
+- `active-workout.png`
+- `exercise-details.png`
+- `exercise-substitution.png`
+- `workout-complete.png`
+
+The GitHub connector used for the architectural bootstrap cannot upload local binary PNGs directly. Copy these six files from the latest Stitch export when working locally. Until then, `DESIGN.md`, `TASKS.md`, and the implemented React Native screens are the available references.
+
+The React Native implementation should preserve the overall Stitch visual language while applying the product corrections documented in `TASKS.md` and `../DESIGN.md`.
+
+Do not copy mock content into the domain model merely because it appears in a screenshot. Exercise relationships, muscle data, equipment and prescriptions must come from application data/contracts.
